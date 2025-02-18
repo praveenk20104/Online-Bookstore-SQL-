@@ -13,6 +13,7 @@ CREATE TABLE Books (
     Price NUMERIC(10, 2),
     Stock INT
 );
+
 DROP TABLE IF EXISTS customers;
 CREATE TABLE Customers (
     Customer_ID SERIAL PRIMARY KEY,
@@ -22,6 +23,7 @@ CREATE TABLE Customers (
     City VARCHAR(50),
     Country VARCHAR(150)
 );
+
 DROP TABLE IF EXISTS orders;
 CREATE TABLE Orders (
     Order_ID SERIAL PRIMARY KEY,
@@ -42,9 +44,11 @@ SELECT * FROM Orders;
 SELECT * FROM Books 
 WHERE Genre='Fiction';
 
+
 -- 2) Find books published after the year 1950:
 SELECT * FROM Books 
 WHERE Published_year>1950;
+
 
 -- 3) List all customers from the Canada:
 SELECT * FROM Customers 
@@ -55,6 +59,7 @@ WHERE country='Canada';
 
 SELECT * FROM Orders 
 WHERE order_date BETWEEN '2023-11-01' AND '2023-11-30';
+
 
 -- 5) Retrieve the total stock of books available:
 
@@ -71,7 +76,6 @@ LIMIT 1;
 -- 7) Show all customers who ordered more than 1 quantity of a book:
 SELECT * FROM Orders 
 WHERE quantity>1;
-
 
 
 -- 8) Retrieve all orders where the total amount exceeds $20:
